@@ -2,17 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// TODO: parameterize operation mode
-// mode, output, devtool
 module.exports = {
-  mode: 'development',
   entry: {
-    index: path.resolve(__dirname, './src/index.js'),
+    index: path.resolve(__dirname, '../src/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../public'),
     filename: '[name].bundle.js',
     clean: true,
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -35,10 +33,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
       title: 'Webpack Boilerplate',
     }),
     new MiniCssExtractPlugin({ filename: 'style.css' }),
   ],
-  devtool: 'inline-source-map',
 };
