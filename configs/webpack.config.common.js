@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -7,10 +6,10 @@ module.exports = {
     index: path.resolve(__dirname, '../src/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, '../public'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '../public/assets'),
+    filename: 'bundle.js',
     clean: true,
-    publicPath: '/',
+    publicPath: '/assets/',
   },
   module: {
     rules: [
@@ -32,10 +31,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/index.html'),
-      title: 'Webpack Boilerplate',
-    }),
     new MiniCssExtractPlugin({ filename: 'style.css' }),
   ],
 };
