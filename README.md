@@ -9,13 +9,13 @@ Webpack 프론트엔드, Express 백엔드를 사용하여 개발할 때 Express
 - `app.js`
 
 ## Webpack
-- `public/` Webpack 번들링 결과를 출력합니다. 
+- `public/assets/` Webpack 번들링 결과를 출력합니다. 
 - `configs/` Webpack configuration을 정의합니다. 
 - `src/` 프론트엔드 소스를 포함합니다. 
 
 # 스크립트
 - `npm run build`  
-Webpack 빌드를 실행하여 `public/` 디렉토리에 결과를 출력합니다. 
+Webpack 빌드를 실행하여 `public/assets/` 디렉토리에 결과를 출력합니다. 
 
 - `npm start` / `npm run server`  
 미리 빌드된 결과를 가지고 Express 서버를 NODE_ENV=production 환경변수와 함께 실행합니다. 
